@@ -3,7 +3,7 @@
 Coozila Media News is based on the
 [https://github.com/thunder/thunder-distribution](Thunder distribution) and is
 basically maintained by the
-[Coozila Media News package](https://github.com//coozila/media-news)
+[Coozila Media News package](https://github.com//coozila/news)
 which handles all module dependencies.
 
 ## Project creation
@@ -20,7 +20,7 @@ results.
 
 ### 2a) Update Coozila Media News
 To update the Coozila Media News codebase use the following composer command.
-`composer update "drupal/core*" thunder/thunder-distribution coozila/media-news -W`.
+`composer update "drupal/core*" thunder/thunder-distribution coozila/news -W`.
 
 ### 2b) Upgrade Coozila Media News codebase
 Coozila Media News tags releases using semantic versioning. This composer template
