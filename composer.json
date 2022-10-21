@@ -1,0 +1,134 @@
+{
+    "name": "coozila/news",
+    "description": "Project template for News projects with composer",
+    "type": "project",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "Brunno <brunno@coozila.com>",
+            "role": ""
+        }
+    ],
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://github.com/coozila/news"
+        },
+        {
+            "packagist.org": false
+        }
+    ],
+    "require": {
+        "coozila/drupal-scaffold": "^1.0",
+        "coozila/media-meta": "^1.0",
+        "coozila/news-frontpage": "^1.0",
+        "coozila/news-landing-page": "^1.0"
+    },
+    "require-dev": {
+        "drupal/core-dev": "^9.4"
+    },
+    "conflict": {
+        "drupal/drupal": "*"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "config": {
+        "discard-changes": true,
+        "sort-packages": true,
+        "preferred-install": {
+            "coozila/*": "dist"
+        },
+        "allow-plugins": {
+            "composer/installers": true,
+            "cweagans/composer-patches": true,
+            "kylekatarnls/update-helper": true,
+            "drupal/core-composer-scaffold": true,
+            "drupal/console-extend-plugin": true,
+            "oomphinc/composer-installers-extender": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    },
+    "autoload": {
+        "classmap": [
+            "scripts/composer/ScriptHandler.php"
+        ],
+        "files": ["load.environment.php"]
+    },
+    "scripts": {
+        "pre-install-cmd": [
+            "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
+        ],
+        "pre-update-cmd": [
+            "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
+        ],
+        "post-install-cmd": [
+            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
+        ],
+        "post-update-cmd": [
+            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
+        ],
+        "init:project": [
+            "cp web/sites/default/settings.coozila.local.php.example web/sites/default/settings.coozila.local.php",
+            "cp .env.example .env",
+            "vendor/bin/robo copy:config-from-demo",
+            "vendor/bin/robo copy:demo-theme-from-demo"
+        ]
+    },
+    "extra": {
+        "installer-types": [
+            "bower-asset",
+            "npm-asset",
+            "coozila-media-module",
+            "coozila-media-theme"
+        ],
+        "installer-paths": {
+            "web/core": [
+                "type:drupal-core"
+            ],
+            "web/libraries/{$name}": [
+                "type:drupal-library",
+                "type:bower-asset",
+                "type:npm-asset"
+            ],
+            "web/modules/contrib/{$name}": [
+                "type:drupal-module"
+            ],
+            "web/modules/coozila/{$name}": [
+                "type:coozila-media-module"
+            ],
+            "web/profiles/contrib/{$name}": [
+                "type:drupal-profile"
+            ],
+            "web/themes/contrib/{$name}": [
+                "type:drupal-theme"
+            ],
+            "web/themes/coozila-media/{$name}": [
+                "type:coozila-tmedia-theme"
+            ],
+            "drush/contrib/{$name}": [
+                "type:drupal-drush"
+            ]
+        },
+        "drupal-scaffold": {
+            "allowed-packages": [
+                "ramsalt/drupal-scaffold"
+            ],
+            "file-mapping": {
+                "[web-root]/sites/development.services.yml": {
+                    "mode": "replace",
+                    "path": "web/core/assets/scaffold/files/development.services.yml",
+                    "overwrite": false
+                }
+            },
+            "locations": {
+                "web-root": "./web"
+            }
+        },
+        "composer-exit-on-patch-failure": true,
+        "patchLevel": {
+            "drupal/core": "-p2"
+        },
+        "enable-patching": true,
+        "patches-file": "composer.patches.json"
+    }
+}
