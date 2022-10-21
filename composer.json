@@ -12,7 +12,7 @@
     "repositories": [
         {
             "type": "composer",
-            "url": "https://github.com/coozila/news"
+            "url": "https://repo.packagist.com/coozila/"
         },
         {
             "packagist.org": false
