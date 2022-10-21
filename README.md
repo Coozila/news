@@ -9,7 +9,7 @@ which handles all module dependencies.
 ## Project creation
 
 You can create a new Coozila Media News project with the following command.
-`composer create-project coozila/news:dev-master some-dir --no-interaction`
+`composer create-project coozila/news:dev-master news --no-interaction`
 
 ## Update Coozila Media News
 
