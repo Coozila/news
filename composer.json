@@ -2,7 +2,7 @@
     "name": "coozila/news",
     "description": "Project template for News projects with composer",
     "type": "project",
-    "license": "proprietary",
+    "license": "GPL-2.0-or-later",
     "authors": [
         {
             "name": "Brunno <brunno@coozila.com>",
