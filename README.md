@@ -8,7 +8,7 @@ which handles all module dependencies.
 
 ## Project creation
 
-You can create a new RamsaltMedia project with the following command.
+You can create a new Coozila Media News project with the following command.
 `composer create-project coozila/news:dev-master some-dir --no-interaction`
 
 ## Update Coozila Media News
