@@ -21,8 +21,6 @@
     "require": {
         "coozila/drupal-scaffold": "^1.0",
         "coozila/media-news": "^1.0",
-        "coozila/news-frontpage": "^1.0",
-        "coozila/news-landing-page": "^1.0"
     },
     "require-dev": {
         "drupal/core-dev": "^9.4"
