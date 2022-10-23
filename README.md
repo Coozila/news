@@ -1,4 +1,4 @@
-# # # Composer template for Coozila Media News project
+# Composer template for Coozila Media News project
 
 Coozila Media News is based on the
 [https://github.com/thunder/thunder-distribution](Thunder distribution) and is
